@@ -1,0 +1,20 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+
+ <div class="content">
+  <strong>AGENDA</strong>
+
+  {% for hour in available %}
+    <ul class="providers">
+      <li class="provider" style="flex-direction: column;align-items: flex-start;margin-bottom: 2px;">
+        <strong>Horário: {{ hour.date_full}} - {{ hour.hour}}</strong>
+        <p style="margin:0"><strong>Cliente</strong>:  {{ hour.client}}</p>
+      </li>
+    </ul>
+  {% endfor %}
+
+  <a href="/" class="back">Voltar</a>
+ </div>
+
+{% endblock %}
